@@ -1,0 +1,20 @@
+# mod_rewrite starts here
+
+
+
+RewriteEngine on
+
+
+# does not apply to existing directory
+
+
+  RewriteCond %{REQUEST_FILENAME} !-d
+  #checking for file directory with .html extension
+  RewriteCond %{REQUEST_FILENAME}\.php -f
+  # here we actually show the page that has the .php extension
+
+
+
+  RewriteRule ^([^\.]+)$ $1.php [NC,L]
+
+
